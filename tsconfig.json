@@ -4,6 +4,16 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@core/*": ["src/app/core/*"],
+      "@env": ["src/environments/environment.ts"],
+      "@models": ["src/app/models/index.ts"],
+      "@models/*": ["src/app/models/*"],
+      "@shared": ["src/app/shared/index.ts"],
+      "@shared/*": ["src/app/shared/*"],
+      "@views": ["src/app/shared/index.ts"],
+      "@views/*": ["src/app/views/*"],
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
@@ -16,6 +26,8 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "lib": [
       "es2018",
       "dom"
@@ -26,5 +38,6 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": ["./src"]
 }

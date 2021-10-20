@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  prod:
+    build:
+      context: .
+    ports: 
+      - 81:80
+    networks:
+      - default
+  test:
+    build:
+      context: .
+      target: build-stage
+    command: npm run test:watch
+    volumes:
+      - .:/app
+    ports:
+      - 9876:9876
+    networks:
+      - default
+networks:
+  default:
+    name: md4u
